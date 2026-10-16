@@ -1,7 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import './App.css'
-import logo from './Vector'
+import heroImage from './assets/hero.png'
+import Search from './component/search'
+
+
 function App() {
+  const [searchTerm, setSearchTerm] = useState('');
   
   return (
     <>
@@ -11,10 +15,12 @@ function App() {
 
       <div className="wrapper">
         <header >
-          <h1  >Find <span className="text-gradient" >Movies</span> You'll Enjoy without the Hassle</h1>
+
+          <img src={heroImage} alt="Hero Banner" />
+          <h1>Find <span className="text-gradient" >Movies</span> You'll Enjoy without the Hassle</h1>
         </header>
 
-        <p>Search</p>
+        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       </div>
      </main>
     </>
